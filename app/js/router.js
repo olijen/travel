@@ -18,7 +18,7 @@ define([
       "event/edit/:id"              : "eventEdit",
       "event/read/:id"              : "eventRead",
       "event/filter/:filter/:value" : "eventFilter",
-      "event/filter/:filter" : "eventFilter",
+      "event/filter/:filter"        : "eventFilter",
     },
 
     // Users
