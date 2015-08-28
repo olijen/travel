@@ -12,6 +12,9 @@
  */
 class Event extends ActiveRecord
 {
+    public $username;
+    public $user_id;
+    
 	public function tableName()
 	{
 		return 'event';
@@ -34,4 +37,11 @@ class Event extends ActiveRecord
             'user' => array(self::BELONGS_TO, 'User', 'user_id'),
 		);
 	}
+
+    /*protected function afterFind()
+    {
+        parent::afterFind();
+        $this->username = $this->user->username;
+        $this->user_id  = $this->user->id;
+    }*/
 }

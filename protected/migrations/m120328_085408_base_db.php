@@ -36,9 +36,7 @@ class m120328_085408_base_db extends CDbMigration
         
         //---Add users
         
-		//$enc = new bCrypt();
-		//$password = $enc->hash('1q2w3e');
-		$password = '1111';
+		$password = UserIdentity::crypt('1111');// => md5('1111'.UserIdentity::$salt);
         
 		$this->insert('user', array (
 			'fname'          => 'Admin',

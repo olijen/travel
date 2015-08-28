@@ -19,22 +19,37 @@ define([
       'click a.edit'   : 'edit'
     },
 
-    initialize: function(options) {//console.log(options);
+    initialize: function(options) {
         this.template = (window.location.href.indexOf('read') !== -1) ? _.template(template) : _.template(tpl);
 
         _.bindAll(this, 'render','confirmDelete', 'close');
-        
+
         this.model.on('error', this.error);
         this.model.on('modal:confirm', this.confirmDelete);
         this.render();
     },
 
-    render: function(template) {//console.log('t77');
+    render: function(template) {
         var self = this;
-        self.$el.html(self.template({
-          model    : self.model.toJSON(),
-        })); 
-        //console.log('11');
+        console.log(App.webUser);
+        //ERROR: 
+        $.when(App.webUser.get('role') != 'admin' || App.users.length || App.users.fetch()).done(function() {
+            var userId = '',
+                first  = '',
+                u      = App.users.get(self.model.get('user_id'));
+
+            if (u) {
+                first  = u.get('fname');
+                userId = u.id;
+            }
+            
+            self.$el.html(self.template({
+              model:    self.model.toJSON(),
+              first:    first,
+              userId:   userId, //{id: 1, username: 555,},
+            }));  
+        });
+        
         return this;
     },
 

@@ -26,7 +26,6 @@ define([
       $.when(
         App.users.length || App.users.fetch()
       ).done(function() {
-        //console.log(UserList);
         require(['views/user/list'], function(UserList) {
           App.mainRegion.show(new UserList({
             collection: App.users
@@ -59,19 +58,14 @@ define([
 
     // events:
     eventList: function() {
-      //console.log('there');
       $.when(
-        /*App.events.length ||*/ App.events.fetch()
+        /* TODO: App.events.length ||*/ App.events.fetch()
       ).done(function() {
-        //console.log('!!!');
-        //console.log(App.events);
-        //console.log(EventList);
         require(['views/event/list'], function(EventList) {
           App.mainRegion.show(new EventList({
             collection : App.events
           }));
         });
-        //console.log('end');
       });
     },
 
@@ -97,7 +91,7 @@ define([
       });
     },
 
-    // Todo: do something if model wasn't found
+    // Todo: do something if model wasn't found!!!
     eventRead: function(id) {
       $.when(
         App.events.length || App.events.fetch()
@@ -112,13 +106,10 @@ define([
     },
     
     eventFilter: function(filter, value) {
-      //console.log(filter, value);
-      //if (App.events.lenght) App.oldEvents = App.events;
       $.when(
         /*App.events.length || */ App.events.fetch()
       ).done(function () {
         App.events.filter(filter, value);
-        //console.log(App.events);
         require(['views/event/list'], function(EventList) {
           App.mainRegion.show(new EventList({
             collection : App.events

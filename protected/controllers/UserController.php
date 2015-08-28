@@ -11,11 +11,11 @@ class UserController extends Controller
 					return 'admin' === Yii::app()->user->model->role;
 				}
 			),
-			/*array(
+			array(
 				'allow',
 				'users' => array('@'),
-				'actions' => array('list', 'read')
-			),*/
+				'actions' => array('read')
+			),
 			array('deny', 'users' => array('*')),
 		);
 	}

@@ -41,25 +41,38 @@ CREATE TABLE IF NOT EXISTS `tbl_migration` (
   PRIMARY KEY (`version`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-CREATE TABLE IF NOT EXISTS `user` (
+CREATE TABLE IF NOT EXISTS `user` 
+(
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `fname` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `lname` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `username` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `pw_reset_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `email` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `role` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `is_deleted` int(11) DEFAULT NULL,
-  `create_date` datetime DEFAULT NULL,
+  
+`fname` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  
+`lname` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  
+`username` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  
+`password` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  
+`pw_reset_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  
+`email` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  
+`role` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  
+`is_deleted` int(11) DEFAULT NULL,
+  
+`create_date` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+) 
+ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
 
 
 
-INSERT INTO `user` (`id`, `fname`, `lname`, `username`, `password`, `pw_reset_token`, `email`, `role`, `is_deleted`, `create_date`) VALUES
-(1, 'Admin', 'Adminovich', 'admin', '1111', '', 'admin@admin.loc', 'admin', 0, '2015-08-27 19:32:33'),
-(2, 'User', 'Userovich', 'user', '1111', '', 'user@user.loc', 'user', 0, '2015-08-27 19:32:33');
+INSERT INTO `user` (`id`, `fname`, `lname`, `username`, `password`, `pw_reset_token`, `email`, `role`, `is_deleted`, `create_date`) 
+VALUES
+(1, 'Admin', 'Adminovich', 'admin', '319d40d1aa3914d2ac0e44f8bfeb2474', '', 'admin@admin.loc', 'admin', 0, '2015-08-27 19:32:33'),
+
+(2, 'User', 'Userovich', 'user', '319d40d1aa3914d2ac0e44f8bfeb2474', '', 'user@user.loc', 'user', 0, '2015-08-27 19:32:33');
 
 CREATE TABLE IF NOT EXISTS `yii_session` (
   `id` char(32) COLLATE utf8_unicode_ci NOT NULL,

@@ -1,9 +1,7 @@
 <div class="row howerable" onclick="window.location.href='#event/read/<%= model.id %>'">
     
     <b> To 
-        <a class="read" href="#event/read/<%= model.id %>">
-            <%= model.place %>
-        </a>
+        <a class="read" href="#event/read/<%= model.id %>"><%= model.place %></a>
     </b>
      | 
     <span class="event-meta">
@@ -32,7 +30,9 @@
             <i class="icon-trash"></i>
         </a>
     </div>
-    
-    <!--div class="content"><%= (model.comment + '').replace(/\n/g,'<br>') %></div-->
+    <div class="pull-left icons">
+        <i class="icon-user"></i>
+        <a href="#user/<%= userId %>" class="edit"><%= first %></a>
+    </div>
     
 </div>

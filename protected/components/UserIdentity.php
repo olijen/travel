@@ -11,6 +11,8 @@ class UserIdentity extends CUserIdentity
 
 	private $_id;
 	private $_user;
+    
+    static  $salt = '!@#SDF#$%FVG%$^';
 
 	/*
 	 * Authenticates a user.
@@ -23,9 +25,7 @@ class UserIdentity extends CUserIdentity
 		));
 		if ($user === null) {
 			$this->errorCode = self::ERROR_USERNAME_INVALID;
-		//TODO: cript
-		//} elseif (!bCrypt::verify($this->password, $user->password)) {
-		} elseif ($this->password != $user->password) {
+		} elseif (self::crypt($this->password) != $user->password) {
 			$this->errorCode = self::ERROR_PASSWORD_INVALID;
 		} elseif ($user->is_deleted) {
 			$this->errorCode = self::ERROR_USER_IS_DELETED;
@@ -45,4 +45,9 @@ class UserIdentity extends CUserIdentity
 	{
 		return $this->_user;
 	}
+    
+    public static function crypt($pwd)
+    {
+        return md5($pwd.self::$salt);
+    }
 }

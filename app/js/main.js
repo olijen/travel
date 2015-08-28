@@ -10,10 +10,10 @@ define([
   'app',
   'models/login',
   'models/webUser',
+  'models/user',
   'collections/user',
   'collections/event',
   'views/navbar',
-  'views/search',
   'views/login',
   'bootstrapDropdown',
   'bootstrapModal',
@@ -21,9 +21,9 @@ define([
   'datejs'
 ], function($, _, Backbone, domReady,
             Router, App,
-            LoginModel, WebUser,
+            LoginModel, WebUser, User,
             UserCollection, EventCollection,
-            NavbarView, SearchView, LoginView) {
+            NavbarView, LoginView) {
 
   $.ajaxSetup({
     dataFilter: function(data, dataType) {
@@ -41,12 +41,6 @@ define([
     }
   });
 
-  // Initialize search
-  /*App.addInitializer(function (options) {
-    var searchView = new SearchView({});
-    searchView.render();
-  });*/
-
   // Cross app collections
   App.users    = new UserCollection;
   App.events    = new EventCollection;
@@ -54,15 +48,24 @@ define([
   // Web User
   App.vent.on('webUser:init', function(data) {
     $('body').removeClass('guest').addClass('logged-in');
-
+    
+    //TODO: set promise
+    var webUser = new User({id: data.id});
+    webUser.fetch();
+    App.webUser = webUser;
+    
     var model = data instanceof WebUser ? data : new WebUser(data);
+    
     var view = new NavbarView({model: model});
     view.render();
 
     model.on('destroy',function() {
       view.close();
       App.vent.trigger('webUser:guest');
-      Backbone.history.navigate('event/list', true);
+      //TODO: remove reset and render
+      App.events.reset();
+      view.render();
+      Backbone.history.navigate('event/filter/future', true);
     });
     this.vent.on('logout', model.destroy, model);
   }, App);
