@@ -1,0 +1,37 @@
+<div class="row">
+    <h1><%= model.place %></h1>
+    <span class="event-meta">
+        <br />
+        <span class="btn btn-primary btn-lg disabled"><%= model.start ? Date.parse(model.start).toString('d MMM, yyyy') : '' %></span>
+        <i class="icon-chevron-right icon-large"></i>
+        <span class="btn btn-primary btn-lg disabled"><%= model.end ? Date.parse(model.end).toString('d MMM, yyyy') : '' %> </span>
+    </span>
+
+    <div class="pull-right to-start">
+        <% if (model.daysToStart > 0) { %>
+            <span class="btn btn-success btn-lg disabled"><%= model.daysToStart %></span> days to start
+        <% } else if (model.daysToStart == 0) { %>
+            <span class="btn btn-warning btn-lg disabled">On the eve</span>
+        <% } else { %>
+            <span class="btn btn-danger btn-lg disabled">Already passed</span>
+        <% } %>
+    </div>
+
+    <hr>
+    
+    <div class="pull-right icons">
+        <a href="#event/edit/<%= model.id %>" class="edit login-required">
+            <i class="icon-edit"></i>
+        </a>
+        <a href="javascript:void(0)" data-toggle="modal" data-target="#modal" class="delete login-required">
+            <i class="icon-trash"></i>
+        </a>
+    </div>
+    
+    <div class="content">
+        <h4>Comment:</h4>
+        <br />
+        <%= (model.comment + '').replace(/\n/g,'<br>') %>
+    </div>
+    
+</div>

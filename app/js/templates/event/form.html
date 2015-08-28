@@ -1,0 +1,45 @@
+<h1>Event!:</h1>
+<br />
+<form class="form-horizontal">
+  <fieldset>
+    <div class="row">
+      <hr>
+      
+      <div class="control-group">
+        <label class="control-label" for="place">Place</label>
+        <div class="controls">
+          <input type="text" class="span9" id="place">
+        </div>
+      </div>
+
+      <!-- TODO: add bootstrap date-time picker -->
+      <div class="control-group">
+        <label class="control-label" for="start">Start date</label>
+        <div class="controls">
+          <input placeholder="yyyy.mm.dd" type="text" class="span9 data" id="start" rows="20">
+        </div>
+      </div>
+      <!-- TODO: add bootstrap date-time picker -->
+      <div class="control-group">
+        <label class="control-label" for="end">End date</label>
+        <div class="controls">
+          <input type="text" placeholder="yyyy.mm.dd" class="span9 date" id="end" rows="20">
+        </div>
+      </div>
+      
+      <div class="control-group">
+        <label class="control-label" for="comment">Comment</label>
+        <div class="controls">
+          <textarea class="span9" id="comment" rows="20"></textarea>
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" name="save" class="btn btn-primary">Save changes</button>
+      <button type="reset" name="cancel" class="btn">Cancel</button>
+    </div>
+    
+  </fieldset>
+</form>

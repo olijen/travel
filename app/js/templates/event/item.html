@@ -1,0 +1,38 @@
+<div class="row howerable" onclick="window.location.href='#event/read/<%= model.id %>'">
+    
+    <b> To 
+        <a class="read" href="#event/read/<%= model.id %>">
+            <%= model.place %>
+        </a>
+    </b>
+     | 
+    <span class="event-meta">
+        <b><%= model.start ? Date.parse(model.start).toString('d MMM, yyyy') : '' %></b>
+        <i class="icon-chevron-right icon-large"></i>
+        <b><%= model.end ? Date.parse(model.end).toString('d MMM, yyyy') : '' %> </b>
+    </span>
+
+    <div class="pull-right to-start">
+        <% if (model.daysToStart > 0) { %>
+            <span class="btn btn-success btn-lg disabled"><%= model.daysToStart %></span> days to start
+        <% } else if (model.daysToStart == 0) { %>
+            <span class="btn btn-warning btn-lg disabled">On the eve</span>
+        <% } else { %>
+            <span class="btn btn-danger btn-lg disabled">Already passed</span>
+        <% } %>
+    </div>
+
+    <hr>
+    
+    <div class="pull-right icons">
+        <a href="#event/edit/<%= model.id %>" class="edit login-required">
+            <i class="icon-edit"></i>
+        </a>
+        <a href="javascript:void(0)" data-toggle="modal" data-target="#modal" class="delete login-required">
+            <i class="icon-trash"></i>
+        </a>
+    </div>
+    
+    <!--div class="content"><%= (model.comment + '').replace(/\n/g,'<br>') %></div-->
+    
+</div>
