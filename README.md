@@ -1,2 +1,1 @@
-# travel
-Travel plane
+Simple Travel Planner v.0.1
