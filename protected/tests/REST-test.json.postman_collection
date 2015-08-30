@@ -1,0 +1,396 @@
+{
+	"id": "21862805-995f-ebd4-7749-783f05e3ba9f",
+	"name": "REST-test",
+	"description": "Testing REST full server",
+	"order": [
+		"256a14bf-2e5d-5fab-ea3b-e1abf9ea9ca1",
+		"f199ebe8-1027-dba9-9d0f-d2e007756c4a",
+		"68870043-8b8c-3e3a-bf50-257ec4c6bb64",
+		"f7193e78-eb8b-48e9-4aeb-8709907a9592",
+		"33b5ce3a-8725-68a2-66ca-8395644d4b49",
+		"b8ed5bcb-261a-946d-9f51-c3a3cdde5f36",
+		"1e282098-999c-b1ff-5fd4-5610753d25e3",
+		"f6b04d34-a836-2071-04d5-5a7350bebe86",
+		"9fdbbca8-2c2a-a9f3-8490-84a127a691d1",
+		"91402714-6a8e-a7c4-cb88-d297fee0fe2f"
+	],
+	"folders": [],
+	"timestamp": 1440938821006,
+	"owner": 0,
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "1e282098-999c-b1ff-5fd4-5610753d25e3",
+			"headers": "Authorization: Basic YWRtaW46MTExMQ==\n",
+			"url": "http://travel/api/event/1",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "DELETE",
+			"data": [
+				{
+					"key": "place",
+					"value": "New place",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "start",
+					"value": "2015.08.31",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "end",
+					"value": "2015.09.05",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "comment",
+					"value": "Comment",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"username": "admin",
+				"password": "1111",
+				"saveToRequest": true
+			},
+			"time": 1440940813453,
+			"name": "Delete event id=1",
+			"description": "",
+			"collectionId": "21862805-995f-ebd4-7749-783f05e3ba9f",
+			"responses": []
+		},
+		{
+			"id": "256a14bf-2e5d-5fab-ea3b-e1abf9ea9ca1",
+			"headers": "Authorization: Basic YWRtaW46MTExMQ==\n",
+			"url": "http://travel/api/webUser",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "username",
+					"value": "admin",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "2222",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"username": "admin",
+				"password": "1111",
+				"saveToRequest": true
+			},
+			"time": 1440939577126,
+			"name": "Auth fail",
+			"description": "",
+			"collectionId": "21862805-995f-ebd4-7749-783f05e3ba9f",
+			"responses": []
+		},
+		{
+			"id": "33b5ce3a-8725-68a2-66ca-8395644d4b49",
+			"headers": "Authorization: Basic YWRtaW46MTExMQ==\n",
+			"url": "http://travel/api/event/99",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "username",
+					"value": "admin",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "1111",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"username": "admin",
+				"password": "1111",
+				"saveToRequest": true
+			},
+			"time": 1440939820671,
+			"name": "Get event id=99 (must fail)",
+			"description": "",
+			"collectionId": "21862805-995f-ebd4-7749-783f05e3ba9f",
+			"responses": []
+		},
+		{
+			"id": "68870043-8b8c-3e3a-bf50-257ec4c6bb64",
+			"headers": "Authorization: Basic YWRtaW46MTExMQ==\n",
+			"url": "http://travel/api/event",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "username",
+					"value": "admin",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "1111",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"username": "admin",
+				"password": "1111",
+				"saveToRequest": true
+			},
+			"time": 1440939682196,
+			"name": "Get event list",
+			"description": "",
+			"collectionId": "21862805-995f-ebd4-7749-783f05e3ba9f",
+			"responses": []
+		},
+		{
+			"id": "91402714-6a8e-a7c4-cb88-d297fee0fe2f",
+			"headers": "Authorization: Basic YWRtaW46MTExMQ==\n",
+			"url": "http://travel/api/event/2",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"username": "admin",
+				"password": "1111",
+				"saveToRequest": true
+			},
+			"time": 1440941008702,
+			"name": "Update event id=2",
+			"description": "",
+			"collectionId": "21862805-995f-ebd4-7749-783f05e3ba9f",
+			"responses": [],
+			"rawModeData": "{\"jsDateStart\":\"2015-09-02T11:13:39.000Z\",\"jsDateEnd\":\"2015-09-06T11:13:39.000Z\",\"daysToStart\":3,\"id\":\"2\",\"place\":\"Francia (changed)\",\"start\":\"2015-09-02 14:13:39\",\"end\":\"2015-09-06 14:13:39\",\"comment\":\"I want romance!\",\"create_date\":\"2015-08-30 14:13:39\",\"user_id\":\"1\"}"
+		},
+		{
+			"id": "9fdbbca8-2c2a-a9f3-8490-84a127a691d1",
+			"headers": "Authorization: Basic YWRtaW46MTExMQ==\n",
+			"url": "http://travel/api/event/2",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "place",
+					"value": "New place",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "start",
+					"value": "2015.08.31",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "end",
+					"value": "2015.09.05",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "comment",
+					"value": "Comment",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"username": "admin",
+				"password": "1111",
+				"saveToRequest": true
+			},
+			"time": 1440940889811,
+			"name": "Get event id=2",
+			"description": "",
+			"collectionId": "21862805-995f-ebd4-7749-783f05e3ba9f",
+			"responses": []
+		},
+		{
+			"id": "b8ed5bcb-261a-946d-9f51-c3a3cdde5f36",
+			"headers": "Authorization: Basic YWRtaW46MTExMQ==\n",
+			"url": "http://travel/api/event",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"username": "admin",
+				"password": "1111",
+				"saveToRequest": true
+			},
+			"time": 1440940655944,
+			"name": "Add new event",
+			"description": "",
+			"collectionId": "21862805-995f-ebd4-7749-783f05e3ba9f",
+			"responses": [],
+			"rawModeData": "{\"jsDateStart\":null,\"jsDateEnd\":null,\"daysToStart\":null,\"place\":\"Test place\",\"start\":\"2015.08.30\",\"end\":\"2015.09.09\",\"comment\":\"Test comment\"}"
+		},
+		{
+			"id": "f199ebe8-1027-dba9-9d0f-d2e007756c4a",
+			"headers": "Authorization: Basic YWRtaW46MTExMQ==\n",
+			"url": "http://travel/api/webUser",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "username",
+					"value": "admin",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "1111",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"username": "admin",
+				"password": "1111",
+				"saveToRequest": true
+			},
+			"time": 1440939452305,
+			"name": "Auth",
+			"description": "",
+			"collectionId": "21862805-995f-ebd4-7749-783f05e3ba9f",
+			"responses": []
+		},
+		{
+			"id": "f6b04d34-a836-2071-04d5-5a7350bebe86",
+			"headers": "Authorization: Basic YWRtaW46MTExMQ==\n",
+			"url": "http://travel/api/event/1",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "place",
+					"value": "New place",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "start",
+					"value": "2015.08.31",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "end",
+					"value": "2015.09.05",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "comment",
+					"value": "Comment",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"username": "admin",
+				"password": "1111",
+				"saveToRequest": true
+			},
+			"time": 1440940846785,
+			"name": "Get event id=1 (must fail)",
+			"description": "",
+			"collectionId": "21862805-995f-ebd4-7749-783f05e3ba9f",
+			"responses": []
+		},
+		{
+			"id": "f7193e78-eb8b-48e9-4aeb-8709907a9592",
+			"headers": "Authorization: Basic YWRtaW46MTExMQ==\n",
+			"url": "http://travel/api/event/1",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [
+				{
+					"key": "username",
+					"value": "admin",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "1111",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "basicAuth",
+			"helperAttributes": {
+				"username": "admin",
+				"password": "1111",
+				"saveToRequest": true
+			},
+			"time": 1440939728788,
+			"name": "Get event id=1",
+			"description": "",
+			"collectionId": "21862805-995f-ebd4-7749-783f05e3ba9f",
+			"responses": []
+		}
+	]
+}

@@ -32,14 +32,15 @@ define([
     render: function(template) {
         var self = this;
         //ERROR: 
+        l(App.webUser, 'admin');
         $.when(App.webUser.get('role') != 'admin' || App.users.length || App.users.fetch()).done(function() {
-            var userId = '',
-                first  = '',
-                u      = App.users.get(self.model.get('user_id'));
+            var userId   = '',
+                first    = '',
+                thisUser = App.users.get(self.model.get('user_id'));
 
-            if (u) {
-                first  = u.get('fname');
-                userId = u.id;
+            if (thisUser) {
+                first  = thisUser.get('fname');
+                userId = thisUser.id;
             }
             
             self.$el.html(self.template({

@@ -1,5 +1,7 @@
 <div class="row">
     <h1><%= model.place %></h1>
+    <i class="icon-user"></i> <%= first %>
+
     <span class="event-meta">
         <br />
         <span class="btn btn-primary btn-lg disabled"><%= model.start ? Date.parse(model.start).toString('d MMM, yyyy') : '' %></span>
@@ -20,6 +22,9 @@
     <hr>
     
     <div class="pull-right icons">
+        <a href="#user/edit/<%= userId %>" class="login-required">
+            <i class="icon-user"></i>
+        </a>
         <a href="#event/edit/<%= model.id %>" class="edit login-required">
             <i class="icon-edit"></i>
         </a>

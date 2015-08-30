@@ -46,9 +46,10 @@ define([
 
   // New Web User
   App.vent.on('webUser:init', function(data) {
-    l('init');
-    App.webUser = App.webUser instanceof WebUser ? App.webUser : new User({id: data.id});
-    if (App.webUser.isNew()) App.webUser.fetch();
+    //TODO: server can return "data" with full user attributes
+    App.webUser = App.webUser instanceof User ? App.webUser : new User({id: data.id});
+    //l(App.webUser.isNew(), 'isNew 2');
+    if (1 /*App.webUser.isNew()*/) App.webUser.fetch();
     
     $('body').removeClass('guest').addClass('logged-in');
 
@@ -56,19 +57,18 @@ define([
     
     var view = new NavbarView({model: model});
     view.render();
-    //Backbone.history.navigate('event/list', true);
     
     model.on('destroy',function() {
       view.close();
       App.vent.trigger('webUser:guest');
       $(".list-view").html('');
+      delete App.webUser;
     });
     this.vent.on('logout', model.destroy, model);
     
   }, App);
   
   App.vent.on('webUser:afterLogin', function(data) {
-    l('afterLogin');
     Backbone.history.navigate('event/filter/future', true);
   }, App);
   
