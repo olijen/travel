@@ -33,6 +33,7 @@ define([
           model.set(data);
           this.close();
           App.vent.trigger('webUser:init', model);
+          App.vent.trigger('webUser:afterLogin', model);
         },
         error: function(jqXHR, textStatus, errorThrown) {
           App.vent.trigger('alert', {

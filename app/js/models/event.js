@@ -12,8 +12,6 @@ define([
         jsDateStart: null,
         jsDateEnd:   null,
         daysToStart: null,
-        //user:        null,
-        //dateNow:     null,
     },
     
     initialize: function() {
@@ -26,9 +24,6 @@ define([
         
         var delta = this.get('jsDateStart').getTime() - new Date().getTime();
         this.set('daysToStart', Math.ceil(delta/1000/60/60/24));
-        //App.users.fetch();
-        //console.log(App.users, 111);
-        //this.set('user', App.users.get(this.get('user_id')));
     }
   });
 });

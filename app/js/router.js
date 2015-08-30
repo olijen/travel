@@ -107,8 +107,9 @@ define([
     
     eventFilter: function(filter, value) {
       $.when(
-        /*App.events.length || */ App.events.fetch()
+        /* TODO: App.events.length || */ App.events.fetch()
       ).done(function () {
+        l(App.events);
         App.events.filter(filter, value);
         require(['views/event/list'], function(EventList) {
           App.mainRegion.show(new EventList({

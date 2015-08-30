@@ -40,36 +40,39 @@ define([
       return data;
     }
   });
-
   // Cross app collections
-  App.users    = new UserCollection;
-  App.events    = new EventCollection;
+  App.users  = new UserCollection;
+  App.events = new EventCollection;
 
-  // Web User
+  // New Web User
   App.vent.on('webUser:init', function(data) {
+    l('init');
+    App.webUser = App.webUser instanceof WebUser ? App.webUser : new User({id: data.id});
+    if (App.webUser.isNew()) App.webUser.fetch();
+    
     $('body').removeClass('guest').addClass('logged-in');
-    
-    //TODO: set promise
-    var webUser = new User({id: data.id});
-    webUser.fetch();
-    App.webUser = webUser;
-    
+
     var model = data instanceof WebUser ? data : new WebUser(data);
     
     var view = new NavbarView({model: model});
     view.render();
-
+    //Backbone.history.navigate('event/list', true);
+    
     model.on('destroy',function() {
       view.close();
       App.vent.trigger('webUser:guest');
-      //TODO: remove reset and render
-      App.events.reset();
-      view.render();
-      Backbone.history.navigate('event/filter/future', true);
+      $(".list-view").html('');
     });
     this.vent.on('logout', model.destroy, model);
+    
   }, App);
-
+  
+  App.vent.on('webUser:afterLogin', function(data) {
+    l('afterLogin');
+    Backbone.history.navigate('event/filter/future', true);
+  }, App);
+  
+  //Guest
   App.vent.on('webUser:guest', function() {
     $('body').removeClass('logged-in').addClass('guest');
     var view = new LoginView();

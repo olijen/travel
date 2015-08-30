@@ -22,7 +22,7 @@ define([
     initialize: function(options) {
         this.template = (window.location.href.indexOf('read') !== -1) ? _.template(template) : _.template(tpl);
 
-        _.bindAll(this, 'render','confirmDelete', 'close');
+        _.bindAll(this, 'render', 'confirmDelete', 'close');
 
         this.model.on('error', this.error);
         this.model.on('modal:confirm', this.confirmDelete);
@@ -31,7 +31,6 @@ define([
 
     render: function(template) {
         var self = this;
-        console.log(App.webUser);
         //ERROR: 
         $.when(App.webUser.get('role') != 'admin' || App.users.length || App.users.fetch()).done(function() {
             var userId = '',
@@ -46,7 +45,7 @@ define([
             self.$el.html(self.template({
               model:    self.model.toJSON(),
               first:    first,
-              userId:   userId, //{id: 1, username: 555,},
+              userId:   userId,
             }));  
         });
         
@@ -76,7 +75,12 @@ define([
     },
 
     confirmDelete: function() {
-        $.when(this.model.destroy()).done(this.close);
+        var self = this;
+        $.when(this.model.destroy()).done(function() {
+            self.close();
+            console.log('delete confirm');
+            Backbone.history.navigate('event/list', true);
+        });
     },
 
     error: function(model, response) {

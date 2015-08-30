@@ -19,8 +19,6 @@ class SiteController extends Controller
 	 */
 	public function actionIndex()
 	{
-		// renders the view file 'protected/views/site/index.php'
-		// using the default layout 'protected/views/layouts/main.php'
 		$this->render('index');
 	}
 
@@ -73,12 +71,12 @@ class SiteController extends Controller
 			Yii::app()->mailer->SMTPSecure = "tls";
 			Yii::app()->mailer->Username = Yii::app()->params['smtp.username'];
 			Yii::app()->mailer->Password = Yii::app()->params['smtp.password'];
-			Yii::app()->mailer->From = 'test@yiibackbone.loc';
-			Yii::app()->mailer->FromName = 'YiiBackbone';
+			Yii::app()->mailer->From = 'toptal@travel.loc';
+			Yii::app()->mailer->FromName = 'Travel planner';
 		} else {
 			Yii::app()->mailer->Host = 'localhost';
-			Yii::app()->mailer->From = 'test@yiibackbone.noloc';
-			Yii::app()->mailer->FromName = 'YiiBackbone';
+			Yii::app()->mailer->From = 'toptal@travel.noloc';
+			Yii::app()->mailer->FromName = 'Toptal planner';
 		}
 
 		Yii::app()->mailer->AddAddress($user->email);
@@ -97,16 +95,16 @@ class SiteController extends Controller
 		$pwResetLink = Yii::app()->request->hostInfo . "/#preset/" . urlencode(rawurlencode($pwResetToken));
 
 		$body = "
-Dear $user->fname $user->lname,
-
-You are receiving this e-mail because you have requested to reset your password.
-
-To complete the password reset process, please follow this link:
-$pwResetLink
-
-Regards,
-Admin
-";
+            Dear $user->fname $user->lname,
+            
+            You are receiving this e-mail because you have requested to reset your password.
+            
+            To complete the password reset process, please follow this link:
+            $pwResetLink
+            
+            Regards,
+            Admin
+            ";
 		Yii::app()->mailer->Body = $body;
 		if ($return = Yii::app()->mailer->Send())
 			$this->sendResponse(200, CJSON::encode($return));

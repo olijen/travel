@@ -11,22 +11,18 @@ define([
     template : _.template(template),
 
     initialize: function(options) {
-        console.log('t12');
       _.bindAll(this, 'render','renderItem', 'close');
       this.user = options.user;
       this.collection.on('error', this.error, this)
     },
 
-    render: function() {//console.log('t3');
+    render: function() {
       this.$el.html(this.template());
       this.collection.each(this.renderItem);
     },
 
-    renderItem: function(model) {//console.log('t4');
+    renderItem: function(model) {
       var itemView = new EventItemView({model:model});
-      //itemView.render();
-      //console.log('11122');
-      //console.log((itemView.el));
       $('<li>').html(itemView.el).appendTo(this.$('ul'));
       this.$('ul').append(itemView.el);
     },
