@@ -87,12 +87,11 @@ define([
   });
   
   $('body').on('click', '#print', function() {
-    $('.list-view').appendTo('#for-print');
+    $('.list-view div .row .print').appendTo('#for-print');
     window.print();
     $('.noprint').show();
-    //
     Backbone.history.navigate('event/filter/future', true);
-    //$('#for-print').hide();
+    setTimeout(function(){$('#for-print').html('');}, 500);
   });
 
   // Load code defined on php side in main layout and start the Application.
