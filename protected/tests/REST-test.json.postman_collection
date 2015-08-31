@@ -55,14 +55,16 @@
 			],
 			"dataMode": "params",
 			"version": 2,
-			"tests": "",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;",
 			"currentHelper": "basicAuth",
 			"helperAttributes": {
 				"username": "admin",
 				"password": "1111",
-				"saveToRequest": true
+				"saveToRequest": true,
+				"id": "basic",
+				"timestamp": 1440941600347
 			},
-			"time": 1440940813453,
+			"time": 1440997182690,
 			"name": "Delete event id=1",
 			"description": "",
 			"collectionId": "21862805-995f-ebd4-7749-783f05e3ba9f",
@@ -91,14 +93,16 @@
 			],
 			"dataMode": "params",
 			"version": 2,
-			"tests": "",
+			"tests": "tests[\"Status code is 400\"] = responseCode.code === 400;",
 			"currentHelper": "basicAuth",
 			"helperAttributes": {
 				"username": "admin",
 				"password": "1111",
-				"saveToRequest": true
+				"saveToRequest": true,
+				"id": "basic",
+				"timestamp": 1440941600347
 			},
-			"time": 1440939577126,
+			"time": 1440997152532,
 			"name": "Auth fail",
 			"description": "",
 			"collectionId": "21862805-995f-ebd4-7749-783f05e3ba9f",
@@ -127,14 +131,16 @@
 			],
 			"dataMode": "params",
 			"version": 2,
-			"tests": "",
+			"tests": "tests[\"Status code is 404\"] = responseCode.code === 404;",
 			"currentHelper": "basicAuth",
 			"helperAttributes": {
 				"username": "admin",
 				"password": "1111",
-				"saveToRequest": true
+				"saveToRequest": true,
+				"id": "basic",
+				"timestamp": 1440941600347
 			},
-			"time": 1440939820671,
+			"time": 1440997143006,
 			"name": "Get event id=99 (must fail)",
 			"description": "",
 			"collectionId": "21862805-995f-ebd4-7749-783f05e3ba9f",
@@ -163,14 +169,16 @@
 			],
 			"dataMode": "params",
 			"version": 2,
-			"tests": "",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;",
 			"currentHelper": "basicAuth",
 			"helperAttributes": {
 				"username": "admin",
 				"password": "1111",
-				"saveToRequest": true
+				"saveToRequest": true,
+				"id": "basic",
+				"timestamp": 1440941600347
 			},
-			"time": 1440939682196,
+			"time": 1440997088061,
 			"name": "Get event list",
 			"description": "",
 			"collectionId": "21862805-995f-ebd4-7749-783f05e3ba9f",
@@ -186,14 +194,16 @@
 			"data": [],
 			"dataMode": "raw",
 			"version": 2,
-			"tests": "",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;",
 			"currentHelper": "basicAuth",
 			"helperAttributes": {
 				"username": "admin",
 				"password": "1111",
-				"saveToRequest": true
+				"saveToRequest": true,
+				"id": "basic",
+				"timestamp": 1440941600347
 			},
-			"time": 1440941008702,
+			"time": 1440997255563,
 			"name": "Update event id=2",
 			"description": "",
 			"collectionId": "21862805-995f-ebd4-7749-783f05e3ba9f",
@@ -235,14 +245,16 @@
 			],
 			"dataMode": "params",
 			"version": 2,
-			"tests": "",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;",
 			"currentHelper": "basicAuth",
 			"helperAttributes": {
 				"username": "admin",
 				"password": "1111",
-				"saveToRequest": true
+				"saveToRequest": true,
+				"id": "basic",
+				"timestamp": 1440941600347
 			},
-			"time": 1440940889811,
+			"time": 1440997205680,
 			"name": "Get event id=2",
 			"description": "",
 			"collectionId": "21862805-995f-ebd4-7749-783f05e3ba9f",
@@ -258,14 +270,16 @@
 			"data": [],
 			"dataMode": "raw",
 			"version": 2,
-			"tests": "",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;",
 			"currentHelper": "basicAuth",
 			"helperAttributes": {
 				"username": "admin",
 				"password": "1111",
-				"saveToRequest": true
+				"saveToRequest": true,
+				"id": "basic",
+				"timestamp": 1440941600347
 			},
-			"time": 1440940655944,
+			"time": 1440997173911,
 			"name": "Add new event",
 			"description": "",
 			"collectionId": "21862805-995f-ebd4-7749-783f05e3ba9f",
@@ -295,14 +309,16 @@
 			],
 			"dataMode": "params",
 			"version": 2,
-			"tests": "",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;",
 			"currentHelper": "basicAuth",
 			"helperAttributes": {
 				"username": "admin",
 				"password": "1111",
-				"saveToRequest": true
+				"saveToRequest": true,
+				"id": "basic",
+				"timestamp": 1440941600347
 			},
-			"time": 1440939452305,
+			"time": 1440997076877,
 			"name": "Auth",
 			"description": "",
 			"collectionId": "21862805-995f-ebd4-7749-783f05e3ba9f",
@@ -343,14 +359,16 @@
 			],
 			"dataMode": "params",
 			"version": 2,
-			"tests": "",
+			"tests": "tests[\"Status code is 404\"] = responseCode.code === 404;",
 			"currentHelper": "basicAuth",
 			"helperAttributes": {
 				"username": "admin",
 				"password": "1111",
-				"saveToRequest": true
+				"saveToRequest": true,
+				"id": "basic",
+				"timestamp": 1440941600347
 			},
-			"time": 1440940846785,
+			"time": 1440997196643,
 			"name": "Get event id=1 (must fail)",
 			"description": "",
 			"collectionId": "21862805-995f-ebd4-7749-783f05e3ba9f",
@@ -379,14 +397,16 @@
 			],
 			"dataMode": "params",
 			"version": 2,
-			"tests": "",
+			"tests": "tests[\"Status code is 200\"] = responseCode.code === 200;",
 			"currentHelper": "basicAuth",
 			"helperAttributes": {
 				"username": "admin",
 				"password": "1111",
-				"saveToRequest": true
+				"saveToRequest": true,
+				"id": "basic",
+				"timestamp": 1440941600347
 			},
-			"time": 1440939728788,
+			"time": 1440997123521,
 			"name": "Get event id=1",
 			"description": "",
 			"collectionId": "21862805-995f-ebd4-7749-783f05e3ba9f",
