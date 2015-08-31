@@ -2,9 +2,7 @@ MySQL 5
 PHP (Yii 1.14)
 -REST ext
 -RBAC ext
--Bootstrap package
--YiiWheels (optional)
--YiiUser module
+-Bootstrap
 Backbone.js
 Marionette
 JQuery

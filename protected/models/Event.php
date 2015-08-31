@@ -11,10 +11,7 @@
  * @property integer $comment
  */
 class Event extends ActiveRecord
-{
-    public $username;
-    public $user_id;
-    
+{   
 	public function tableName()
 	{
 		return 'event';
@@ -25,7 +22,7 @@ class Event extends ActiveRecord
 		return array(
 			array('start, end, place, comment', 'required'),
 			array('place', 'length', 'max'=>150),
-			array('start_ts, end_ts', 'safe'),
+			array('start, end', 'safe'),
 
 			array('id, start, end, place, comment', 'safe', 'on'=>'search'),
 		);
@@ -37,11 +34,4 @@ class Event extends ActiveRecord
             'user' => array(self::BELONGS_TO, 'User', 'user_id'),
 		);
 	}
-
-    /*protected function afterFind()
-    {
-        parent::afterFind();
-        $this->username = $this->user->username;
-        $this->user_id  = $this->user->id;
-    }*/
 }

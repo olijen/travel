@@ -5,7 +5,7 @@
     <meta name="language" content="en" />
 
     <title><?php echo CHtml::encode($this->pageTitle); ?></title>
-    <meta http-equiv="Cache-Control" content="no-cache">
+    <!--meta http-equiv="Cache-Control" content="no-cache"-->
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/app/css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/app/css/bootstrap-wysihtml5.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/app/css/visualsearch.css" />

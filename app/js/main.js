@@ -58,14 +58,13 @@ define([
     
     var view = new NavbarView({model: model});
     view.render();
-
+    window.location.href='#event/filter/future';
+    $('.list-view').html('');
     model.on('destroy',function() {
       view.close();
       App.vent.trigger('webUser:guest');
-      //TODO: remove reset and render
-      App.events.reset();
       view.render();
-      Backbone.history.navigate('event/filter/future', true);
+      window.location.href='#';
     });
     this.vent.on('logout', model.destroy, model);
   }, App);

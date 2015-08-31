@@ -23,15 +23,7 @@ return CMap::mergeArray (array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
-		'application.helpers.*',
 	),
-
-    'modules'=>array(
-        'gii' => array(
-            'class' => 'system.gii.GiiModule',
-            'password' => '1',
-        ),
-    ),
 
 	// application components
 	'components'=>array(
@@ -40,6 +32,7 @@ return CMap::mergeArray (array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
 		),
+        
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'rules'=>array(
@@ -48,8 +41,8 @@ return CMap::mergeArray (array(
 				array('site/login'         , 'pattern'=>'api/webUser'              , 'verb'=>'POST')   ,
 				array('site/login'         , 'pattern'=>'api/webUser'              , 'verb'=>'PUT')   ,
 				array('site/logout'        , 'pattern'=>'api/webUser'              , 'verb'=>'DELETE') ,
-				array('site/forgotpass'    , 'pattern'=>'api/site/forgotpass'      , 'verb'=>'POST')   ,
-				array('site/passreset'     , 'pattern'=>'api/site/passreset'       , 'verb'=>'POST')   ,
+				//array('site/forgotpass'    , 'pattern'=>'api/site/forgotpass'      , 'verb'=>'POST')   ,
+				//array('site/passreset'     , 'pattern'=>'api/site/passreset'       , 'verb'=>'POST')   ,
 
 				array('user/list'       , 'pattern'=>'api/user'             , 'verb'=>'GET'),
 				array('user/create'     , 'pattern'=>'api/user'             , 'verb'=>'POST'),
@@ -63,19 +56,8 @@ return CMap::mergeArray (array(
 				array('event/update'     , 'pattern'=>'api/event/<id:\d+>'    , 'verb'=>'PUT'),
 				array('event/delete'     , 'pattern'=>'api/event/<id:\d+>'    , 'verb'=>'DELETE'),
 
-				array('comment/list'    , 'pattern'=>'api/comment'          , 'verb'=>'GET'),
-				array('comment/create'  , 'pattern'=>'api/comment'          , 'verb'=>'POST'),
-				array('comment/read'    , 'pattern'=>'api/comment/<id:\d+>' , 'verb'=>'GET'),
-				array('comment/update'  , 'pattern'=>'api/comment/<id:\d+>' , 'verb'=>'PUT'),
-				array('comment/delete'  , 'pattern'=>'api/comment/<id:\d+>' , 'verb'=>'DELETE'),
-
 				// Other controllers
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
-                
-                // GII patterns
-                'gii' => 'gii',
-                'gii/<controller:\w+>' => 'gii/<controller>',
-                'gii/<controller:\w+>/<action:\w+>' => 'gii/<controller>/<action>',
 			),
 		),
 		// MySQL database connection settings
