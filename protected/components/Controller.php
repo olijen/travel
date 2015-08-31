@@ -123,10 +123,10 @@ class Controller extends CController
         return 'admin' === $this->role;
     }
     
-    public function getIsSales()
+    /*public function getIsSales()
     {
         return 'sales' === $this->role;
-    }
+    }*/
     
     public function getIsUser()
     {

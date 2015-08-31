@@ -6,8 +6,8 @@ class EventController extends Controller
 	{
 		return array_merge(
 			array(array('allow',
-				'actions' => array('read', 'list', 'comments'),
-				'users' => array('?')
+				'actions' => array('read', 'list', 'create', 'update', 'delete'),
+				'users' => array('@')
 			)),
 			parent::accessRules()
 		);
@@ -23,7 +23,7 @@ class EventController extends Controller
     public function actionList()
 	{
 	    //TODO: find only current user events 'user_id='.Yii::app()->user->id
-        if (Yii::app()->user->isGuest) $this->sendResponse(200, CJSON::encode(array()));
+        //if (Yii::app()->user->isGuest) $this->sendResponse(401);
         $condition = $this->isUser ?
             'user_id='.Yii::app()->user->id : '1=1';
 		$models = Event::model()->findAll($condition);
