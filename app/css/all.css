@@ -11,3 +11,9 @@
     border: 1px solid #ddd;
     border-radius: 4px;
 }
+
+@media print {
+    .noprint {
+        display: none;
+    }
+}

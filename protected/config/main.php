@@ -95,7 +95,8 @@ return CMap::mergeArray (array(
 			'autoCreateSessionTable' => false,
 			'sessionTableName' => 'yii_session'
 		),
-		/*'cache'=>extension_loaded('apc') ?
+        
+		'cache'=> YII_DEBUG ? array() : extension_loaded('apc') ?
 			array(
 				'class' => 'CApcCache',
 			) :
@@ -104,7 +105,7 @@ return CMap::mergeArray (array(
 				'connectionID' => 'db',
 				'autoCreateCacheTable' => true,
 				'cacheTableName' => 'cache',
-			),*/
+			),
 		'mailer' => array(
 		  'class' => 'application.extensions.mailer.EMailer',
 		),
@@ -119,13 +120,13 @@ return CMap::mergeArray (array(
 					'class'=>'CFileLogRoute',
 					'levels'=>'error, warning',
 				),
-				array(
+				/*array(
 					'class'=>'CEmailLogRoute',
 					'levels'=>'error',
 					'filter'=>'CLogFilter',
 					'emails' => array('developer@example.com'),
 					'enabled' => !YII_DEBUG,
-				),
+				),*/
 			),
 		),
 	),

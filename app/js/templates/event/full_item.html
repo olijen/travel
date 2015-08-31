@@ -22,9 +22,11 @@
     <hr>
     
     <div class="pull-right icons">
-        <a href="#user/edit/<%= userId %>" class="login-required">
-            <i class="icon-user"></i>
-        </a>
+         <% if (status == 'admin') { %>
+            <a href="#user/edit/<%= userId %>" class="login-required">
+                <i class="icon-user"></i>
+            </a>
+        <% } %>
         <a href="#event/edit/<%= model.id %>" class="edit login-required">
             <i class="icon-edit"></i>
         </a>
@@ -36,7 +38,7 @@
     <div class="content">
         <h4>Comment:</h4>
         <br />
-        <%= (model.comment + '').replace(/\n/g,'<br>') %>
+        <%= model.comment %>
     </div>
     
 </div>

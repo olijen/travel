@@ -19,7 +19,7 @@
   </head>
   <body>
 
-    <div class="navbar navbar-fixed-top">
+    <div class="navbar navbar-fixed-top noprint">
       <div class="navbar-inner">
         <div class="container">
           <div id="loader" class="loading"></div>
@@ -30,11 +30,11 @@
       </div>
     </div>
 
-    <div class="head"></div>
+    <div class="head noprint"></div>
 
-    <div class="main container">
+    <div class="main container noprint">
       <?php echo $content?>
     </div> <!-- /.container -->
-
+    <div id="for-print"></div>
   </body>
 </html>

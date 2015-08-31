@@ -6,8 +6,7 @@ require([
     'jasmine.html',
     'jasmine.jquery'
 ], function (jasmine) {
-    console.log('start testing');
-    
+   
     jasmine.getEnv().addReporter(new jasmine.TrivialReporter());
     jasmine.getEnv().execute();
     
@@ -17,35 +16,10 @@ require([
     };
     window.onload = function() {jasmineEnv.execute();};
     
-    describe("REST-user", function() {
-      it("REST C", function() {
+    describe("Test1", function() {
+      it("1", function() {
         expect(true).toBe(true);
       });
-      it("REST R", function() {
-        expect(true).toBe(true);
-      });
-      it("REST U", function() {
-        expect(true).toBe(true);
-      });
-      it("REST D", function() {
-        expect(true).toBe(true);
-      });
-    });
-    
-    describe("REST-event", function() {
-      it("REST C", function() {
-        expect(true).toBe(true);
-      });
-      it("REST R", function() {
-        expect(true).toBe(true);
-      });
-      it("REST U", function() {
-        expect(true).toBe(true);
-      });
-      it("REST D", function() {
-        expect(true).toBe(true);
-      });
-    });
-    
+    });    
 });
 

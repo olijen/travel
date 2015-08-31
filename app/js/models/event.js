@@ -12,6 +12,7 @@ define([
         jsDateStart: null,
         jsDateEnd:   null,
         daysToStart: null,
+        daysToEnd:   null,
     },
     
     initialize: function() {
@@ -24,6 +25,9 @@ define([
         
         var delta = this.get('jsDateStart').getTime() - new Date().getTime();
         this.set('daysToStart', Math.ceil(delta/1000/60/60/24));
+        
+        delta = this.get('jsDateEnd').getTime() - new Date().getTime();
+        this.set('daysToEnd', Math.ceil(delta/1000/60/60/24));
     }
   });
 });

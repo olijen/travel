@@ -34,7 +34,12 @@ define([
             break;
             
             case 'next_month':
-                return;
+                _.forEach(this.models, function(model) {
+                    if ((model.get('daysToStart') >= 0 && model.get('daysToStart') <= 30) ||
+                        (model.get('daysToEnd')   >= 0 && model.get('daysToEnd') <= 30)
+                    )
+                        resultModel.push(model);
+                }, this);
             break;
             
             case 'between':

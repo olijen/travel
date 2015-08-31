@@ -67,7 +67,7 @@ class m120328_085408_base_db extends CDbMigration
         //--- Add base event
         	
 		$this->insert('event', array(
-            'user_id'        => $adminId,
+            'user_id'        => $userId,
 			'place'          => 'Italia',
 			'start'          => new CDbExpression('NOW() - INTERVAL 1 DAY'),
 			'end'            => new CDbExpression('NOW() + INTERVAL 2 DAY'),
@@ -76,7 +76,7 @@ class m120328_085408_base_db extends CDbMigration
 		));
         
         $this->insert('event', array(
-            'user_id'        => $adminId,
+            'user_id'        => $userId,
 			'place'          => 'Francia',
 			'start'          => new CDbExpression('NOW() + INTERVAL 3 DAY'),
 			'end'            => new CDbExpression('NOW() + INTERVAL 7 DAY'),
@@ -87,8 +87,8 @@ class m120328_085408_base_db extends CDbMigration
         $this->insert('event', array(
             'user_id'        => $userId,
 			'place'          => 'Mexico',
-			'start'          => new CDbExpression('NOW()'),
-			'end'            => new CDbExpression('NOW() + INTERVAL 4 DAY'),
+			'start'          => new CDbExpression('NOW()  + INTERVAL 10 DAY'),
+			'end'            => new CDbExpression('NOW() + INTERVAL 15 DAY'),
 			'comment'        => 'I <3 TEQUILA',
 			'create_date'    => new CDbExpression('NOW()'),
 		));
@@ -96,8 +96,8 @@ class m120328_085408_base_db extends CDbMigration
         $this->insert('event', array(
             'user_id'        => $userId,
 			'place'          => 'Ukraine',
-			'start'          => new CDbExpression('NOW() - INTERVAL 3 DAY'),
-			'end'            => new CDbExpression('NOW() + INTERVAL 4 DAY'),
+			'start'          => new CDbExpression('NOW() - INTERVAL 20 DAY'),
+			'end'            => new CDbExpression('NOW() - INTERVAL 15 DAY'),
 			'comment'        => 'Oh... We want the European Union...',
 			'create_date'    => new CDbExpression('NOW()'),
 		));

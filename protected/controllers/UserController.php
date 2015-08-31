@@ -25,7 +25,7 @@ class UserController extends Controller
 		);
 	}
 	public function actionRead($id)
-	{
+	{ 
 		$model = User::model()->findByPk($id);
 		if (null === $model)
 			throw new CHttpException(404);

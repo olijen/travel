@@ -13,6 +13,7 @@ define([
       "user/new"                    : "userNew",
       "user/edit/:id"               : "userEdit",
       "user/delete/:id"             : "userDelete",
+      "user/tools"                  : "userTools",
       "event/list"                  : "eventList",
       "event/new"                   : "eventNew",
       "event/edit/:id"              : "eventEdit",
@@ -109,7 +110,6 @@ define([
       $.when(
         /* TODO: App.events.length || */ App.events.fetch()
       ).done(function () {
-        l(App.events);
         App.events.filter(filter, value);
         require(['views/event/list'], function(EventList) {
           App.mainRegion.show(new EventList({
@@ -117,6 +117,19 @@ define([
           }));
         });
       });
-    }
+    },
+    
+    // Todo: rewrite
+    /*userTools: function() {
+        require(['views/modal/new-pass'], function(Form) {
+          var form = new Form({
+            model: App.webUser,
+            header: 'Change password'
+          });
+          form.render();
+        });
+    },*/
+    
+    //END router
   });
 });
