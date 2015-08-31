@@ -23,18 +23,18 @@ class User extends ActiveRecord
 	protected function afterValidate()
 	{
 		if ($this->isNewRecord) {
-			$this->password = $this->encrypt($this->password);
+			$this->password = UserIdentity::crypt($this->password);
 		} else if ($this->newPassword) {
-			$this->password = $this->encrypt($this->newPassword);
+			$this->password = UserIdentity::crypt($this->newPassword);
 		}
 		return parent::afterValidate();
 	}
 
-	public function encrypt($value)
+	/*public function encrypt($value)
 	{
 		$enc = new bCrypt();
 		return $enc->hash($value);
-	}
+	}*/
 
 	public function toJSON()
 	{

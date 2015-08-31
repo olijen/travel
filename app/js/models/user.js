@@ -11,7 +11,7 @@ define([
 
     urlRoot: 'api/user',
     
-    relations: [
+    /*relations: [
       {
         type: Backbone.HasOne, 
         key: 'events',
@@ -23,7 +23,7 @@ define([
           includeInJSON: Backbone.Model.prototype.idAttribute,
         }
       },
-    ],
+    ],*/
 
   });
 

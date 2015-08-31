@@ -2,10 +2,11 @@ define([
   'jquery',
   'underscore',
   'backbone',
+  'models/user',
   'modelbinding',
   'text!templates/user/form.html',
   'app'
-  ], function($, _, Backbone, ModelBinding, template, App) {
+  ], function($, _, Backbone, User, ModelBinding, template, App) {
 
   return Backbone.View.extend({
     template : _.template(template),
@@ -36,11 +37,22 @@ define([
     },
 
     success: function() {
-      App.vent.trigger('alert', {
-        msg: 'User "' + this.model.get('username') + '" updated.',
-        type: 'success'
-      });
-      Backbone.history.navigate('user/list', true);
+      if (App.webUser instanceof User) {
+          App.vent.trigger('alert', {
+            msg: 'User "' + this.model.get('username') + '" updated!',
+            type: 'success'
+          });
+          
+          Backbone.history.navigate('user/list', true);
+      } else {
+          //TODO: mail user to confirm registration
+          App.vent.trigger('alert', {
+            msg: 'Register "' + this.model.get('username') + '" with success! Please, log in!',
+            type: 'success'
+          });
+          $('.main').html('');
+          //Backbone.history.navigate('event/list', true);
+      }
     },
 
     error: function(model, response) {

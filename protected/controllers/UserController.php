@@ -16,6 +16,11 @@ class UserController extends Controller
 				'users' => array('@'),
 				'actions' => array('read')
 			),
+            array(
+				'allow',
+				'users' => array('*'),
+				'actions' => array('create')
+			),
 			array('deny', 'users' => array('*')),
 		);
 	}
